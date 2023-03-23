@@ -11,22 +11,12 @@ class DebugScreen extends StatelessWidget {
     return ViewModelBuilder<DebugScreenViewModel>.reactive(
         viewModelBuilder: () => DebugScreenViewModel(),
         onModelReady: (model) => model.init(),
-        builder: (context, model, child) => Scaffold(
-          appBar: AppBar(
-            title: Text('title'.tr()),
-          ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Center(
-                child: OutlinedButton(
-                  onPressed: () =>  model.goToHomeScreen(context),
-                  child: const Text('Home screen'),
-                ),
+        builder: (context, model, child) =>
+            Scaffold(
+              appBar: AppBar(
+                title: Text('title'.tr()),
               ),
-            ],
-          ),
-        )
+            )
     );
   }
 }

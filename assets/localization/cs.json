@@ -1,4 +1,8 @@
 {
-  "title": "Školappka",
-  "homeScreen" : "Domácí obrazovka"
+  "title": "Kvíz",
+  "homeScreen": "Domácí Obrazovka",
+  "questionScreen": "Otázky",
+  "question": "Otázka",
+  "previous": "Zpět",
+  "next": "Další"
 }

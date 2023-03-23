@@ -11,7 +11,6 @@ void main() async {
       supportedLocales: const [Locale('cs')],
       fallbackLocale: const Locale('cs'),
       child: const MyApp()));
-  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
