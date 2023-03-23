@@ -14,7 +14,17 @@ class DebugScreen extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Lepší Quiz'),
           ),
-          body: Container(),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Center(
+                child: OutlinedButton(
+                  onPressed: () =>  model.goToHomeScreen(context),
+                  child: const Text('Home screen'),
+                ),
+              ),
+            ],
+          ),
         )
     );
   }
