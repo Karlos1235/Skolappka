@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Školappka',
+      initialRoute: '/',
+      routes: {
+        '/debug': (context) => const DebugScreen(),
+      },
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
