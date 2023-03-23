@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import '../../core/view_models/debug_screen.dart';
@@ -12,7 +13,7 @@ class DebugScreen extends StatelessWidget {
         onModelReady: (model) => model.init(),
         builder: (context, model, child) => Scaffold(
           appBar: AppBar(
-            title: const Text('Lepší Quiz'),
+            title: Text('title'.tr()),
           ),
           body: Container(),
         )
