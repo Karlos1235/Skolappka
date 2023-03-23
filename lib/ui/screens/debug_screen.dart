@@ -15,7 +15,17 @@ class DebugScreen extends StatelessWidget {
           appBar: AppBar(
             title: Text('title'.tr()),
           ),
-          body: Container(),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Center(
+                child: OutlinedButton(
+                  onPressed: () =>  model.goToHomeScreen(context),
+                  child: const Text('Home screen'),
+                ),
+              ),
+            ],
+          ),
         )
     );
   }
