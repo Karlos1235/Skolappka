@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:webview_flutter/webview_flutter.dart';
+import 'package:skolappka/ui/screens/aktuality_screen.dart';
+import 'package:skolappka/ui/screens/home_screen.dart';
+import 'package:skolappka/ui/screens/rozvrh_screen.dart';
 
 
 void main() async {
@@ -21,18 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Dukla'),
-        ),
-        body: const Padding(
-          padding: EdgeInsets.all(10.0),
-          child: WebView(
-            initialUrl: 'https://www.spssecb.cz/aktuality',
-            javascriptMode: JavascriptMode.unrestricted,
-          ),
-        ),
-      ),
+      home: RozvrhScreen(),
     );
   }
 }

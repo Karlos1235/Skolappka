@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 
-class HomeScreen extends StatefulWidget {
+class RozvrhScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _RozvrhScreenState createState() => _RozvrhScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _RozvrhScreenState extends State<RozvrhScreen> {
   bool _isLoading = true;
   final Completer<WebViewController> _controller = Completer<WebViewController>();
 
@@ -16,12 +16,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Aktuality'),
+        title: Text('Rozvrh'),
       ),
       body: Stack(
         children: [
           WebView(
-            initialUrl: 'https://www.spssecb.cz',
+            initialUrl: 'https://bakalari.spssecb.cz/bakaweb/timetable/public',
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (WebViewController controller) {
               _controller.complete(controller);
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             navigationDelegate: (NavigationRequest request) {
               // Omezení navigace na původní doménu
-              if (!request.url.startsWith('https://www.spssecb.cz')) {
+              if (!request.url.startsWith('https://bakalari.spssecb.cz/bakaweb/timetable/public')) {
                 return NavigationDecision.prevent;
               }
               return NavigationDecision.navigate;

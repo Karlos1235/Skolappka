@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 
-class HomeScreen extends StatefulWidget {
+class AktualityScreen extends StatefulWidget {
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _AktualityScreenState createState() => _AktualityScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _AktualityScreenState extends State<AktualityScreen> {
   bool _isLoading = true;
   final Completer<WebViewController> _controller = Completer<WebViewController>();
 
@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Stack(
         children: [
           WebView(
-            initialUrl: 'https://www.spssecb.cz',
+            initialUrl: 'https://www.spssecb.cz/aktuality',
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (WebViewController controller) {
               _controller.complete(controller);
@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             navigationDelegate: (NavigationRequest request) {
               // Omezení navigace na původní doménu
-              if (!request.url.startsWith('https://www.spssecb.cz')) {
+              if (!request.url.startsWith('https://www.spssecb.cz/aktuality')) {
                 return NavigationDecision.prevent;
               }
               return NavigationDecision.navigate;
